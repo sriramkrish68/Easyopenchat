@@ -292,6 +292,26 @@ The `EasyChatBot` class supports the following parameters:
 - **GUI Errors**: Displays errors in the chat history.
 - **Plugin Errors**: Returns error messages for invalid commands or execution failures.
 
+
+## Limitations
+
+- **Vector Memory**: Placeholder implementation; requires custom embedding integration for production use.
+- **GUI Streaming**: Requires Gradio >= 3.50.0 for streaming support due to queue requirements.
+- **Model Support**: Limited to models available via OpenRouter.
+- **Performance**: Large conversation histories may impact performance without optimization.
+
+## Troubleshooting
+
+- **GUI Error: "Need to enable queue to use generators"**:
+  - Upgrade Gradio to >= 3.50.0 (`pip install --upgrade gradio`).
+  - Alternatively, use a non-streaming `gui.py` (see previous responses).
+- **API Errors**: Verify your OpenRouter API key and model name. Check network connectivity.
+- **Plugin Issues**: Ensure plugin files are in `easyopenchat/plugins` and follow the naming convention.
+- **Streaming Issues**: Ensure `client.py` correctly parses SSE chunks (see previous fixes).
+
+## Development and Scaling Further
+
+
 ## Extending the Library
 
 ### Adding Plugins
@@ -423,22 +443,6 @@ Build and run:
 docker build -t easyopenchat .
 docker run -p 8000:8000 easyopenchat
 ```
-
-## Limitations
-
-- **Vector Memory**: Placeholder implementation; requires custom embedding integration for production use.
-- **GUI Streaming**: Requires Gradio >= 3.50.0 for streaming support due to queue requirements.
-- **Model Support**: Limited to models available via OpenRouter.
-- **Performance**: Large conversation histories may impact performance without optimization.
-
-## Troubleshooting
-
-- **GUI Error: "Need to enable queue to use generators"**:
-  - Upgrade Gradio to >= 3.50.0 (`pip install --upgrade gradio`).
-  - Alternatively, use a non-streaming `gui.py` (see previous responses).
-- **API Errors**: Verify your OpenRouter API key and model name. Check network connectivity.
-- **Plugin Issues**: Ensure plugin files are in `easyopenchat/plugins` and follow the naming convention.
-- **Streaming Issues**: Ensure `client.py` correctly parses SSE chunks (see previous fixes).
 
 ## Future Improvements
 
