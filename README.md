@@ -1,12 +1,12 @@
 Library Link: https://pypi.org/project/easyopenchat/
 
-# EasyOpenChat Technical Documentation
+# EasyOpenChat Documentation
 
 ## Overview
 
 **EasyOpenChat** is a Python library designed to simplify the creation of chatbots powered by OpenRouter's language model APIs. It provides a beginner-friendly interface for building chatbots while offering advanced features for customization and scalability. The library supports multiple interfaces (CLI, GUI, and web API), a plugin system, persistent memory, and streaming responses, making it suitable for both simple prototypes and production-grade applications.
 
-- **Version**: 0.4.0
+- **Version**: 0.3.0
 - **License**: MIT
 - **Python Version**: >= 3.8
 - **Dependencies**: requests, jinja2, gradio, fastapi, uvicorn, rich
